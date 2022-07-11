@@ -1,6 +1,7 @@
 import '../app_enums/EnumClasses.dart';
 import '../app_strings/AppStrings.dart';
 
+///Payment model class for sending request to the respective platforms
 class PaymentModel {
   final String amount;
 
@@ -23,6 +24,7 @@ class PaymentModel {
       required this.customerEmail,
       required this.paymentMethod});
 
+  /// Returns a map of the properties of the class
   Map<String, String> toMap() {
     final map = {
       AppStrings.amounToPayKey: amount,
@@ -36,6 +38,7 @@ class PaymentModel {
     return map;
   }
 
+  /// This accepts a [PaymentModel] and returns string
   String _paymentMethod(PaymentMethod method) => method == PaymentMethod.card
       ? AppStrings.paymentMethodCardValue
       : method == PaymentMethod.accountTransfer

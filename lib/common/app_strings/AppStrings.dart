@@ -1,8 +1,8 @@
 
 /// App-wide class for holding strings for uniformity
 abstract class AppStrings {
-  ///Methods names to invoke
 
+  ///Methods names to invoke
   static const initializeMonnify = "initialise_monnify";
   static const makeMonnifyPayment = "make_monnify_payment";
 
@@ -30,8 +30,7 @@ abstract class AppStrings {
   static const  paymentMethodAllValue = "user_all";
 
   ///Different keys for decoding message gotten from server side
-  ///
-  ///
+
   /// keys for payment returned variables
   static const paidStatusMessageKey = "payment_status";
   static const paidCustomerNameKey = "paid_customer_name_key";

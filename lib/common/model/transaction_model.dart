@@ -3,6 +3,7 @@
 import '../app_enums/EnumClasses.dart';
 import '../app_strings/AppStrings.dart';
 
+/// Class for accepting the result of transactions from the platforms
 class Transaction {
   final String message;
   final PaymentStatus status;
@@ -31,6 +32,8 @@ class Transaction {
       required this.status,
       required this.transactionReference});
 
+  ///This returns an object of this class
+  /// It takes in a Map [map] as argument
   Transaction.fromMap(Map<String, dynamic> map)
       : message = map[AppStrings.paidStatusMessageKey] ?? "",
         transactionReference =
@@ -46,7 +49,8 @@ class Transaction {
         currencyCode = map[AppStrings.paidCurrencyCodeKey] ?? "",
         amount = map[AppStrings.paidAmountKey] ?? "";
 
-  ///
+  /// [_setTransactionStatus] returns [PaymentStatus] and accepts String
+  /// [statusMessage] as an argument
   static PaymentStatus _setTransactionStatus(String statusMessage) {
     var status = PaymentStatus.emptyValue;
     switch (statusMessage) {
