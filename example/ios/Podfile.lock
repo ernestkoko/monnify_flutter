@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (5.6.1)
+  - Flutter (1.0.0)
+  - IQKeyboardManagerSwift (6.5.10)
+  - monnify_flutter (0.0.1):
+    - Flutter
+    - MonnifyiOSSDK
+  - MonnifyiOSSDK (0.1.9):
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - StompClientLib
+    - SwiftyJSON
+  - SocketRocket (0.6.0)
+  - StompClientLib (1.4.1):
+    - SocketRocket
+  - SwiftyJSON (5.0.1)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - monnify_flutter (from `.symlinks/plugins/monnify_flutter/ios`)
+  - MonnifyiOSSDK
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - MonnifyiOSSDK
+    - SocketRocket
+    - StompClientLib
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  monnify_flutter:
+    :path: ".symlinks/plugins/monnify_flutter/ios"
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
+  monnify_flutter: 2faf8c7439c642b0e3ee6ad46664caede9971e36
+  MonnifyiOSSDK: c23a8211335793e8168f0f87e315bf624c6e9f3b
+  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  StompClientLib: ac40390e9660c574675f1c933bec81c8e2811a4f
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
+
+PODFILE CHECKSUM: 9013d6036a3664a7d065cdccfe2615adfd30c578
+
+COCOAPODS: 1.11.3
