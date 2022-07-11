@@ -3,7 +3,7 @@
 # monnify_flutter
 
 Flutter plugin for Android and iOS Monnify payment gateway
-[Image](plugin_phone_image.png)
+[](plugin_phone_image.png)
 
 ## Getting Started
 
