@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 
 /// App-wide class for holding strings for uniformity
 abstract class AppStrings {

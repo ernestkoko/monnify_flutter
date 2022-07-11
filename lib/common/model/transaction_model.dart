@@ -71,7 +71,7 @@ class Transaction {
         break;
 
       case AppStrings.paymentStatusGatewayErrorValue:
-        status = PaymentStatus.paymentgatewayError;
+        status = PaymentStatus.paymentGatewayError;
         break;
 
       default:

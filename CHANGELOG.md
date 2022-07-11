@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.1-dev.1
 
-* TODO: Describe initial release.
+* A pre-release for monnify_flutter
