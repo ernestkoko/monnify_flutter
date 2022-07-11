@@ -33,13 +33,17 @@ class _MyAppState extends State<MyApp> {
   Future<void> initPlatformState() async {
     // We also handle the message potentially returning null.monnify.
     try {
-      final result= await _monnifyPlugPlugin.initializeMonnify(
+      final result = await _monnifyPlugPlugin.initializeMonnify(
           apiKey: Hidden.API_KEY,
+
+          ///Enter your API key here from monnify
           contractCode: Hidden.CONTRACT_CODE,
+
+          ///Enter your contract code here from monnify
           applicationMode: ApplicationMode.test);
 
       print("Initialisation Result:  $result");
-    } on Exception{
+    } on Exception {
       print('Failed to get platform version.');
     }
   }
@@ -108,14 +112,14 @@ class _MyAppState extends State<MyApp> {
   ///Custom text field
   Widget customTextField(
       {String? hint,
-        TextEditingController? controller,
-        FocusNode? focusNode,
-        String? errorText,
-        Widget? suffixIcon,
-        bool readOnly = false,
-        TextInputType? textInputType,
-        ValueChanged<String>? onChanged,
-        Widget? label}) {
+      TextEditingController? controller,
+      FocusNode? focusNode,
+      String? errorText,
+      Widget? suffixIcon,
+      bool readOnly = false,
+      TextInputType? textInputType,
+      ValueChanged<String>? onChanged,
+      Widget? label}) {
     return TextField(
         controller: controller,
         focusNode: focusNode,
