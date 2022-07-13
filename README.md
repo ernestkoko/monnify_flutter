@@ -5,10 +5,6 @@
 Flutter plugin for Android and iOS Monnify payment gateway
 
 
-![](plugin_phone_image.png)
-
-
-
 ## Getting Started
 
 This project is all about Monnify payment.
