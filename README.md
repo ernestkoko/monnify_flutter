@@ -13,7 +13,9 @@ It supports both Android and iOS platforms.
 ![](plugin_phone_image.png)
 
 
-:man_technologist: ##Installation
+:man_technologist: 
+##Installation
+
 To use this plugin for payment, add `monnify_flutter` as a 
 dependency to your [pubspec.yaml file](https://docs.flutter.dev/development/packages-and-plugins/using-packages)
 
