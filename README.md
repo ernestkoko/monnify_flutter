@@ -14,7 +14,7 @@ It supports both Android and iOS platforms.
 
 
 :man_technologist: 
-##Installation
+## Installation
 
 To use this plugin for payment, add `monnify_flutter` as a 
 dependency to your [pubspec.yaml file](https://docs.flutter.dev/development/packages-and-plugins/using-packages)
