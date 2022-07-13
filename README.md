@@ -14,6 +14,8 @@ Flutter plugin for Android and iOS Monnify payment gateway
 This project is all about Monnify payment.
 It supports both Android and iOS platforms.
 
+![](plugin_phone_image.png)
+
 You can add this plugin to your flutter application
 [here](https://pub.dev/packages/monnify_flutter),
 a specialized package that includes platform-specific implementation code for
