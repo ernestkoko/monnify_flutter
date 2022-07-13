@@ -1,5 +1,3 @@
-
-
 import '../app_enums/EnumClasses.dart';
 import '../app_strings/AppStrings.dart';
 
@@ -38,7 +36,7 @@ class Transaction {
       : message = map[AppStrings.paidStatusMessageKey] ?? "",
         transactionReference =
             map[AppStrings.paidTransactionReferenceKey] ?? "",
-        status = _setTransactionStatus(map[AppStrings.paidStatusMessageKey]) ,
+        status = _setTransactionStatus(map[AppStrings.paidStatusMessageKey]),
         method = map[AppStrings.paidPaymentMethodKey] ?? "",
         date = map[AppStrings.paidDateKey] ?? "",
         amountPayable = map[AppStrings.paidAmountPayableKey] ?? "",

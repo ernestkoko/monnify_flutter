@@ -15,7 +15,7 @@ abstract class MonnifyFlutterPlatform extends PlatformInterface {
   ///
   /// Defaults to [MethodChannelMonnifyFlutter].
   static MonnifyFlutterPlatform get instance => _instance;
-  
+
   /// Platform-specific implementations should set this with their own
   /// platform-specific class that extends [MonnifyFlutterPlatform] when
   /// they register themselves.
@@ -24,22 +24,21 @@ abstract class MonnifyFlutterPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-
-
-
   Future<String?> initializeMonnify(
       {required String apiKey,
-        required String contractCode,
-        required ApplicationMode appMode}) async {
+      required String contractCode,
+      required ApplicationMode appMode}) async {
     throw UnimplementedError('initializeMonnify() has not been implemented');
   }
 
-  Future<Map<String, dynamic>> makePayment({required String amount,
-    required String currencyCode,
-    required String customerName,
-    required String customerEmail,
-    required String paymentReference,
-    required String paymentDescription, required PaymentMethod paymentMethod})async{
+  Future<Map<String, dynamic>> makePayment(
+      {required String amount,
+      required String currencyCode,
+      required String customerName,
+      required String customerEmail,
+      required String paymentReference,
+      required String paymentDescription,
+      required PaymentMethod paymentMethod}) async {
     throw UnimplementedError("makePayment() not implemented");
   }
 }

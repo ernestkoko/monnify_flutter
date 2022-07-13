@@ -1,7 +1,5 @@
-
 /// App-wide class for holding strings for uniformity
 abstract class AppStrings {
-
   ///Methods names to invoke
   static const initializeMonnify = "initialise_monnify";
   static const makeMonnifyPayment = "make_monnify_payment";
@@ -26,8 +24,8 @@ abstract class AppStrings {
 
   ///Payment methods values
   static const paymentMethodCardValue = "card";
-  static const paymentMethodBankTransferValue ="bank_transfer";
-  static const  paymentMethodAllValue = "user_all";
+  static const paymentMethodBankTransferValue = "bank_transfer";
+  static const paymentMethodAllValue = "user_all";
 
   ///Different keys for decoding message gotten from server side
 
@@ -55,5 +53,5 @@ abstract class AppStrings {
   static const paymentStatusFailedValue =
       "Transaction completed unsuccessfully. This means no payment came in for Account Transfer method or attempt to charge card failed.";
   static const paymentStatusGatewayErrorValue = "Payment gateway error.";
-  static const paymentStatusEmptyValue ="";
+  static const paymentStatusEmptyValue = "";
 }

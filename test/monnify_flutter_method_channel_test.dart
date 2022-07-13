@@ -19,6 +19,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-   // expect(await platform.initializeMonnify(apiKey:"ruruririri", contractCode: "contractCode", appMode:" appMode"), '42');
+    // expect(await platform.initializeMonnify(apiKey:"ruruririri", contractCode: "contractCode", appMode:" appMode"), '42');
   });
 }

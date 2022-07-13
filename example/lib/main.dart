@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-
 import 'package:monnify_flutter/common/app_enums/EnumClasses.dart';
 import 'package:monnify_flutter/monnify_flutter.dart';
 import 'package:monnify_flutter_example/hidden.dart';
@@ -34,12 +33,12 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.monnify.
     try {
       final result = await _monnifyPlugPlugin.initializeMonnify(
-          apiKey: Hidden.API_KEY,
 
           ///Enter your API key here from monnify
-          contractCode: Hidden.CONTRACT_CODE,
+          apiKey: Hidden.API_KEY,
 
           ///Enter your contract code here from monnify
+          contractCode: Hidden.CONTRACT_CODE,
           applicationMode: ApplicationMode.test);
 
       print("Initialisation Result:  $result");
