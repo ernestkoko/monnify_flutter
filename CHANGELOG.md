@@ -1,3 +1,3 @@
-## 0.0.1-dev.4
+## 0.0.1
 
-* A pre-release for monnify_flutter
+* First stable version.
