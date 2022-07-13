@@ -76,6 +76,38 @@ class Transaction {
         status = PaymentStatus.paymentGatewayError;
         break;
 
+      case AppStrings.paymentStatusIOSPending:
+        status = PaymentStatus.pending;
+        break;
+
+      case AppStrings.paymentStatusIOSPaid:
+        status = PaymentStatus.paid;
+        break;
+
+      case AppStrings.paymentStatusIOSOverPaid:
+        status = PaymentStatus.overPaid;
+        break;
+
+      case AppStrings.paymentStatusIOSPartiallyPaid:
+        status = PaymentStatus.partiallyPaid;
+        break;
+
+      case AppStrings.paymentStatusIOSCancelled:
+        status = PaymentStatus.cancelled;
+        break;
+
+      case AppStrings.paymentStatusIOSReversed:
+        status = PaymentStatus.reversed;
+        break;
+
+      case AppStrings.paymentStatusIOSExpired:
+        status = PaymentStatus.expired;
+        break;
+
+      case AppStrings.paymentStatusIOSFailed:
+        status = PaymentStatus.failed;
+        break;
+
       default:
         status = PaymentStatus.emptyValue;
     }

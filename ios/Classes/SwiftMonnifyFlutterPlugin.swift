@@ -2,6 +2,8 @@ import Flutter
 import UIKit
 import MonnifyiOSSDK
 
+//Created by Ernest Eferetin 11 July 2022 (ernesteferetin@yahoo.com)
+
 private let channelName = "monnify_flutter"
 private let INITIALIZE_MONNIFY = "initialise_monnify"
 private let MAKE_PAYMENT = "make_monnify_payment"
@@ -16,8 +18,10 @@ private let AMOUNT_TO_PAY_KEY = "amount_to_pay"
 private let CURRENCY_CODE_KEY = "currency_code"
 private let CUSTOMER_NAME_KEY = "customer_name"
 private let CUSTOMER_EMAIL_KEY = "customer_email"
+private let CUSTOMER_PHONE_NUMBER_KEY = "customer_phone_number"
 private let PAYMENT_REFERENCE_KEY = "payment_reference"
 private let PAYMENT_DESCRIPTION_KEY = "payment_description"
+private let TOKENISE_PAYMENT_KEY = "tokenise_payment"
 
 //PAYMENT KEYS SENT TO CLIENT
 private let PAID_STATUS_MESSAGE_KEY = "payment_status"
@@ -68,6 +72,7 @@ public class SwiftMonnifyFlutterPlugin: NSObject, FlutterPlugin {
       switch call.method {
           
       case INITIALIZE_MONNIFY : initialiseMonnify(data:call, result:result)
+          
       case MAKE_PAYMENT : makePayment(data:call, flutterResult:result)
           
       default: result(FlutterMethodNotImplemented)
@@ -103,9 +108,11 @@ public class SwiftMonnifyFlutterPlugin: NSObject, FlutterPlugin {
         let currencyCode = arg?[CURRENCY_CODE_KEY] ?? ""
         let customerName = arg?[CUSTOMER_NAME_KEY] ?? ""
         let customerEmail = arg?[CUSTOMER_EMAIL_KEY] ?? ""
+        let customerPhoneNumber = arg?[CUSTOMER_PHONE_NUMBER_KEY] ?? ""
         let paymentRef = arg?[PAYMENT_REFERENCE_KEY] ?? ""
         let paymentDescription = arg?[PAYMENT_DESCRIPTION_KEY] ?? ""
         let paymentMethods = arg?[PAYMENT_METHOD_KEY] ?? ""
+        let tokenise = tokeniseCard(card: arg?[TOKENISE_PAYMENT_KEY] ?? "")
         
         let methods = getPaymentMethods(data: paymentMethods)
         
@@ -117,12 +124,12 @@ public class SwiftMonnifyFlutterPlugin: NSObject, FlutterPlugin {
                                               paymentReference: paymentRef,
                                               customerEmail: customerEmail,
                                               customerName: customerName ,
-                                              customerMobileNumber: "08000000000",
+                                              customerMobileNumber: customerPhoneNumber,
                                               paymentDescription: paymentDescription,
                                               incomeSplitConfig: [],
                                               metaData: ["deviceType":"ios", "userId":"user314285714"],
                                               paymentMethods: methods,
-                                              tokeniseCard: false)
+                                              tokeniseCard: tokenise)
         
         monnify.initializePayment(withTransactionParameters: parameter,
                                   presentingViewController: uiViewController,
@@ -133,6 +140,14 @@ public class SwiftMonnifyFlutterPlugin: NSObject, FlutterPlugin {
            
         })
         
+    }
+    
+    private func tokeniseCard(card: String)-> Bool{
+        if(card == "tokenise"){
+            return true
+        }else{ return false
+            
+        }
     }
     
     //Transaction reponse
@@ -156,7 +171,7 @@ public class SwiftMonnifyFlutterPlugin: NSObject, FlutterPlugin {
         var dictonary : [String: String] = [:]
         
         dictonary[PAID_STATUS_MESSAGE_KEY] = status
-        dictonary[PAID_CUSTOMER_NAME_KEY] = "NAME"
+        dictonary[PAID_CUSTOMER_NAME_KEY] = ""
         dictonary[PAID_TRANSACTION_REFERENCE_KEY] = response.transactionReference
         dictonary[PAID_PAYMENT_REFERENCE_KEY] = response.paymentReference
         dictonary[PAID_AMOUNT_KEY] = _formatDecimalToString(value: response.amountPaid ?? 0)
@@ -179,6 +194,7 @@ public class SwiftMonnifyFlutterPlugin: NSObject, FlutterPlugin {
     
     ///get the app mode
     private func getAppMode(mode: String?) ->  ApplicationMode {
+        print("MODE: \(String(describing: mode))")
         switch mode {
         case LIVE_MODE : return ApplicationMode.live
         case TEST_MODE: return ApplicationMode.test

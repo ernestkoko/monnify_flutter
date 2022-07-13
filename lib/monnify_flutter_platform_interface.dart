@@ -36,6 +36,7 @@ abstract class MonnifyFlutterPlatform extends PlatformInterface {
       required String currencyCode,
       required String customerName,
       required String customerEmail,
+         String? customerPhoneNumber,
       required String paymentReference,
       required String paymentDescription,
       required PaymentMethod paymentMethod}) async {

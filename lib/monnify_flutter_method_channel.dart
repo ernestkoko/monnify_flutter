@@ -28,11 +28,16 @@ class MethodChannelMonnifyFlutter extends MonnifyFlutterPlatform {
     };
 
     try {
+
       final result =
           await methodChannel.invokeMethod(AppStrings.initializeMonnify, map);
+
       return result;
+
     } catch (error) {
+
       rethrow;
+
     }
   }
 
@@ -42,9 +47,11 @@ class MethodChannelMonnifyFlutter extends MonnifyFlutterPlatform {
       required String currencyCode,
       required String customerName,
       required String customerEmail,
+        String? customerPhoneNumber,
       required String paymentReference,
       required String paymentDescription,
       required PaymentMethod paymentMethod}) async {
+
     final map = PaymentModel(
             amount: amount,
             currencyCode: currencyCode,
@@ -52,15 +59,19 @@ class MethodChannelMonnifyFlutter extends MonnifyFlutterPlatform {
             paymentDescription: paymentDescription,
             paymentReference: paymentReference,
             customerEmail: customerEmail,
+            customerPhoneNumber: customerPhoneNumber,
             paymentMethod: paymentMethod)
         .toMap();
+
     try {
+
       final result = await methodChannel.invokeMapMethod<String, String>(
           AppStrings.makeMonnifyPayment, map);
 
-      print('ResultReturn : $result');
       return await Future.value(result);
+
     } catch (error) {
+
       rethrow;
     }
   }

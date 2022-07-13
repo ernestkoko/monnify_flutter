@@ -18,6 +18,7 @@ abstract class AppStrings {
   static const currencyCodeKey = "currency_code";
   static const customerNameKey = "customer_name";
   static const customerEmailKey = "customer_email";
+  static const customerPhoneNumber = "customer_phone_number";
   static const paymentReferenceKey = "payment_reference";
   static const paymentDescriptionKey = "payment_description";
   static const paymentMethodKey = "payment_method";
@@ -43,7 +44,8 @@ abstract class AppStrings {
   static const paidPaymentMethodKey = "paid_payment_method_key";
   static const paidAmountPayableKey = "paid_amount_payable_key";
 
-  ///Pyament Status string keys
+  ///Payment Status string keys
+  //Android
   static const paymentStatusPendingValue = "Transaction not paid.";
   static const paymentStatusPaidValue = "Customer paid exact amount.";
   static const paymentStatusOverpaidValue =
@@ -54,4 +56,13 @@ abstract class AppStrings {
       "Transaction completed unsuccessfully. This means no payment came in for Account Transfer method or attempt to charge card failed.";
   static const paymentStatusGatewayErrorValue = "Payment gateway error.";
   static const paymentStatusEmptyValue = "";
+  //iOS
+ static const paymentStatusIOSPending  = "PENDING";
+  static const paymentStatusIOSPaid= "PAID";
+  static const paymentStatusIOSOverPaid = "OVERPAID";
+  static const paymentStatusIOSPartiallyPaid= "PARTIALLY_PAID";
+  static const paymentStatusIOSCancelled= "CANCELLED";
+  static const paymentStatusIOSReversed= "REVERSED";
+  static const paymentStatusIOSExpired = "EXPIRED";
+  static const paymentStatusIOSFailed = "FAILED";
 }

@@ -25,6 +25,7 @@ class MockMonnifyFlutterPlatform
       required String currencyCode,
       required String customerName,
       required String customerEmail,
+        required String customerPhoneNumber,
       required String paymentReference,
       required String paymentDescription,
       required PaymentMethod paymentMethod}) {
@@ -64,6 +65,7 @@ void main() {
             currencyCode: "NGN",
             customerName: "Monni",
             customerEmail: "example@yahoo.com",
+            customerPhoneNumber: "",
             paymentReference: "paymentReference",
             paymentDescription: "paymentDescription",
             paymentMethod: PaymentMethod.card),

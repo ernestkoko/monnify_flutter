@@ -12,5 +12,9 @@ enum PaymentStatus {
   partiallyPaid,
   failed,
   paymentGatewayError,
-  emptyValue
+  emptyValue,
+  cancelled,
+  reversed,
+  expired
+
 }

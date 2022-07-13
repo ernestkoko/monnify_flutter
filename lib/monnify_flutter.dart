@@ -6,6 +6,7 @@ class MonnifyFlutter {
   ///Intsance of the Monnify Plugin
   static final MonnifyFlutter _instance = MonnifyFlutter();
 
+  ///Instance that is exposed to client
   static MonnifyFlutter get instance => _instance;
 
   /// [initializeMonnify] calls the platforms APIs to initialise Monnify
@@ -19,6 +20,7 @@ class MonnifyFlutter {
     try {
       final result = await MonnifyFlutterPlatform.instance.initializeMonnify(
           apiKey: apiKey, contractCode: contractCode, appMode: applicationMode);
+
       return result;
     } catch (error) {
       rethrow;
@@ -29,11 +31,13 @@ class MonnifyFlutter {
   ///Arguments String [amount], [currencyCode], [customerName], [customerEmail],
   ///[paymentReference], [paymentDescription], and [paymentMethod] are required
   ///for the method to work seamlessly
+  ///[customerPhoneNumber] is the only param that is not required
   Future<Transaction> makePayment(
       {required String amount,
       required String currencyCode,
       required String customerName,
       required String customerEmail,
+        String? customerPhoneNumber,
       required String paymentReference,
       required String paymentDescription,
       required PaymentMethod paymentMethod}) async {
@@ -43,6 +47,7 @@ class MonnifyFlutter {
           currencyCode: currencyCode,
           customerName: customerName,
           customerEmail: customerEmail,
+          customerPhoneNumber: customerPhoneNumber!,
           paymentReference: paymentReference,
           paymentDescription: paymentDescription,
           paymentMethod: paymentMethod);

@@ -10,6 +10,8 @@ class PaymentModel {
   final String customerName;
 
   final String customerEmail;
+
+  final String? customerPhoneNumber;
   final String paymentReference;
 
   final String paymentDescription;
@@ -22,6 +24,7 @@ class PaymentModel {
       required this.paymentDescription,
       required this.paymentReference,
       required this.customerEmail,
+        this.customerPhoneNumber ="",
       required this.paymentMethod});
 
   /// Returns a map of the properties of the class
@@ -31,6 +34,7 @@ class PaymentModel {
       AppStrings.currencyCodeKey: currencyCode,
       AppStrings.customerNameKey: customerName,
       AppStrings.customerEmailKey: customerEmail,
+      AppStrings.customerPhoneNumber: customerPhoneNumber ?? "",
       AppStrings.paymentReferenceKey: paymentReference,
       AppStrings.paymentDescriptionKey: paymentDescription,
       AppStrings.paymentMethodKey: _paymentMethod(paymentMethod)

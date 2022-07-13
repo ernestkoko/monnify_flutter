@@ -90,13 +90,12 @@ class _MyAppState extends State<MyApp> {
                             paymentDescription: "Testinggg",
                             paymentMethod: PaymentMethod.all);
 
-                        print("Example Tracsaction::  ${result.status}");
                       } catch (error) {
                         print("Errror: $error");
                       }
                     },
                     child: const Text("Pay",
-                        style: TextStyle(color: Colors.white, fontSize: 30)))
+                        style: TextStyle(color: Colors.white, fontSize: 30),),)
               ],
             ),
           ),
