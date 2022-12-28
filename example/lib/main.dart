@@ -35,10 +35,10 @@ class _MyAppState extends State<MyApp> {
       final result = await _monnifyPlugPlugin.initializeMonnify(
 
           ///Enter your API key here from monnify
-          apiKey: Hidden.API_KEY,
+          apiKey: API_KEY,
 
           ///Enter your contract code here from monnify
-          contractCode: Hidden.CONTRACT_CODE,
+          contractCode: CONTRACT_CODE,
           applicationMode: ApplicationMode.test);
 
       print("Initialisation Result:  $result");
@@ -85,6 +85,7 @@ class _MyAppState extends State<MyApp> {
                             amount: amountController.text,
                             currencyCode: "NGN",
                             customerName: nameController.text,
+                            customerPhoneNumber: '081234545657',
                             customerEmail: emailController.text,
                             paymentReference: referenceId(),
                             paymentDescription: "Testinggg",

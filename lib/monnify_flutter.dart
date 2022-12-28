@@ -37,7 +37,7 @@ class MonnifyFlutter {
       required String currencyCode,
       required String customerName,
       required String customerEmail,
-        String? customerPhoneNumber,
+      required String customerPhoneNumber,
       required String paymentReference,
       required String paymentDescription,
       required PaymentMethod paymentMethod}) async {
@@ -47,7 +47,7 @@ class MonnifyFlutter {
           currencyCode: currencyCode,
           customerName: customerName,
           customerEmail: customerEmail,
-          customerPhoneNumber: customerPhoneNumber!,
+          customerPhoneNumber: customerPhoneNumber,
           paymentReference: paymentReference,
           paymentDescription: paymentDescription,
           paymentMethod: paymentMethod);
