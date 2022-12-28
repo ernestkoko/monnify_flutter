@@ -1,7 +1,7 @@
 name: monnify_flutter
 description: Flutter plugin for Monnify services. It supports the android and iOS platforms and it
   is easy to use. It's used for making payment.
-version: 0.0.1
+version: 0.0.2
 
 homepage: https://github.com/ernestkoko/monnify_flutter
 
